@@ -4,7 +4,7 @@
     />
     <div class="h-full">
       <div
-      class="py-[5px] max-w-[1080px] mx-auto px-[1em]"
+      class="py-[5px] max-w-[1080px] mx-auto px-[1em]  z-10"
       >
         <router-view />
       </div>

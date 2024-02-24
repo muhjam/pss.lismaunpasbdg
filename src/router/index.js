@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: () => import("@/views/layout/LayoutCompetition.vue"),
+    component: () => import("@/views/layout/LayoutView.vue"),
     children: [
       {
         path: "/",

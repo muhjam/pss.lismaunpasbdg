@@ -1,25 +1,27 @@
 <template>
- <nav class="bg-gray-800 py-4">
+ <nav class="py-4">
+  <div class="max-w-[1200px] mx-auto">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
-        <img class="h-8 mr-2" src="logo.png" alt="Logo">
-        <h1 class="text-white text-lg font-semibold">Your Website</h1>
+        <img :src="require('../../../public/icon.png')" alt="Pasanggiri Seni Sunda" class="w-[50px] mr-2">
+        <h1 class="text-[#FF3D00] text-lg font-semibold">Pasanggiri Seni Sunda</h1>
       </div>
       <ul class="flex">
         <li class="mr-4">
-          <a href="#" class="text-white hover:text-gray-400">Home</a>
+          <a href="#" class="text-[#413e66] font-medium hover:text-gray-400">Home</a>
         </li>
         <li class="mr-4">
-          <a href="#" class="text-white hover:text-gray-400">About</a>
+          <a href="#" class="text-[#413e66] font-medium hover:text-gray-400">About</a>
         </li>
         <li class="mr-4">
-          <a href="#" class="text-white hover:text-gray-400">Services</a>
+          <a href="#" class="text-[#413e66] font-medium hover:text-gray-400">Services</a>
         </li>
         <li>
-          <a href="#" class="text-white hover:text-gray-400">Contact</a>
+          <a href="#" class="text-[#413e66] font-medium hover:text-gray-400">Contact</a>
         </li>
       </ul>
     </div>
+  </div>
   </nav>
 </template>
 
@@ -27,8 +29,6 @@
 
 export default {
 	props: {
-	},
-	data() {
 	},
 	mounted() {
 	},
