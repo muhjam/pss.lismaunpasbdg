@@ -1,10 +1,18 @@
 <template>
-    <div class="relative">
+    <div class="relative w-full h-[200px] md:h-[500px] z-0">
       <div class="absolute inset-0 w-full h-full overflow-hidden">
         <img v-for="(image, index) in images" :key="index" :src="require(`@/assets/images/image${index + 1}.jpg`)" :alt="`Image ${index + 1}`" class="w-full h-full object-cover" :class="{ 'hidden': activeImage !== index + 1 }">
       </div>
-      <button @click="prevImage" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-2 py-1 bg-gray-800 text-white rounded-l-md">Prev</button>
-      <button @click="nextImage" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-2 py-1 bg-gray-800 text-white rounded-r-md">Next</button>
+      <button @click="prevImage" class="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 ml-2 rounded-full opacity-[0.6] hover:opacity-[1] bg-gray-800 text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <button @click="nextImage" class="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 mr-2 rounded-full opacity-[0.6] hover:opacity-[1] bg-gray-800 text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
     </div>
   </template>
   
@@ -33,4 +41,4 @@
     }
   };
   </script>
-  
+s  
