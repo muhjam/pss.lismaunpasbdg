@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full h-[200px] md:h-[500px] z-0">
+    <div class="relative w-full h-[200px] md:h-[400px] lg:h-[640px] z-0">
       <div class="absolute inset-0 w-full h-full overflow-hidden">
         <img v-for="(image, index) in images" :key="index" :src="require(`@/assets/images/image${index + 1}.jpg`)" :alt="`Image ${index + 1}`" class="w-full h-full object-cover" :class="{ 'hidden': activeImage !== index + 1 }">
       </div>

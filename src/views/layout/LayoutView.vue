@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavbarView/>
+    <NavbarView  @scroll-to-about="handleScrollToAbout"/>
     <router-view />
    <FooterView/>
   </div>

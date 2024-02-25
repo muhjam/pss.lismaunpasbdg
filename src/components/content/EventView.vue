@@ -1,7 +1,8 @@
 <template>
-    <div class="max-w-[1080px] mx-auto py-4">
-      <div class="py-2">
-        <h2 class="text-4xl font-bold text-center text-[#413e66]">Daftar</h2>
+    <div class="py-4 bg-[#F5F8FD]">
+      <div class="max-w-[1080px] mx-auto ">
+      <div class="p-4">
+        <h2 class="text-4xl font-bold text-center text-[#413e66]">Event</h2>
         <h4 class="text-md text-center">Acara PSS memiliki 5 lomba kesenian, sebagai berikut</h4>
       </div>
       <div class="flex justify-center flex-wrap mt-4 px-2">
@@ -13,6 +14,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </template>
   

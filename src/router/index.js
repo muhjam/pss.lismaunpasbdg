@@ -16,9 +16,20 @@ const routes = [
     ],
   },
   {
-    path: "*",
-    name: "404",
-    component: () => import("@/views/pages/Error/404.vue"),
+    path: "/",
+    component: () => import("@/views/layout/LayoutBlank.vue"),
+    children: [
+		{
+			path: "/daftar",
+			name: "RegisterView",
+			component: () => import("@/views/pages/RegisterView.vue"),
+	},
+	{
+		path: "*",
+		name: "404",
+		component: () => import("@/views/pages/Error/404.vue"),
+	},
+    ],
   },
 ];
 

@@ -1,21 +1,32 @@
 <template>
 	<div class="w-full">
-		<HeaderView/>
-		<ListRegister/>
+		<HeaderView id="home"/>
+		<AboutView id="about"/>
+		<EventView id="event"/>
+		<RegistView/>
 	</div>
   </template>
   
   <script>
   import HeaderView from "@/components/header/HeaderView.vue";
-  import ListRegister from "@/components/content/ListRegister.vue";
+  import AboutView from "@/components/content/AboutView.vue";
+  import EventView from "@/components/content/EventView.vue";
+  import RegistView from "@/components/content/RegistView.vue";
 
   export default {
 	name: "HomeView",
 	components: {
 		HeaderView,
-		ListRegister,
+		EventView,
+		AboutView,
+		RegistView,
 	},
-	mounted() {},
+	methods: {
+    handleScrollToAbout() {
+      this.$refs.aboutView.handleScrollToAbout();
+    }
+    // Tambahkan metode serupa untuk setiap bagian navbar lainnya
+  },
 	computed: {},
   };
   </script>
