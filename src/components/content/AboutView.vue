@@ -2,7 +2,7 @@
     <div class="max-w-[1080px] mx-auto py-10 flex flex-col md:flex-row gap-4">
       <div class="w-full md:w-[50%]">
         <!-- Menambahkan kelas "hover:scale-105" untuk memberikan efek membesar saat dihover -->
-        <img :src="require('../../../public/icon.png')" class="w-90 hover:scale-105"/>
+        <img :src="require('@/assets/pss.png')" class="w-90 hover:scale-105"/>
       </div>
       <div class="p-4 w-full md:w-[50%]">
         <h2 class="text-4xl font-bold text-[#413e66]">About Us</h2>
