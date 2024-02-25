@@ -10,11 +10,11 @@ import { parseAsync } from '@babel/core';
         <h5 class="text-2xl mb-4 mt-4">Data Diri Peserta</h5>
           <div class="mb-4">
             <label for="nama_lengkap" class="block text-sm font-medium mb-2">Nama Lengkap</label>
-            <input v-model="params.name_lengkap" type="text" id="nama_lengkap" class="border border-[#e2e8f0] rounded px-3 py-2 w-full focus:outline focus:outline-[#80bdff] font-normal">
+            <input v-model="params.nama_lengkap" type="text" id="nama_lengkap" class="border border-[#e2e8f0] rounded px-3 py-2 w-full focus:outline focus:outline-[#80bdff] font-normal">
           </div>
           <div class="mb-4">
-            <label for="whatsapp" class="block text-sm font-medium mb-2">No Telp/Hp</label>
-            <input v-model="params.no_telp" type="text" id="whatsapp" class="border border-[#e2e8f0] rounded px-3 py-2 w-full focus:outline focus:outline-[#80bdff] font-normal">
+            <label for="no_telp" class="block text-sm font-medium mb-2">No Telp/Hp</label>
+            <input v-model="params.no_telp" type="text" id="no_telp" class="border border-[#e2e8f0] rounded px-3 py-2 w-full focus:outline focus:outline-[#80bdff] font-normal">
           </div>
           <h5 class="text-2xl mb-4 mt-4">Data Sekolah</h5>
           <div class="mb-4">
@@ -70,37 +70,37 @@ import { parseAsync } from '@babel/core';
                 class="hidden"
               />
             <label for="fileInput" class="block text-sm font-medium mb-2">Bukti Bayar</label>
+            <div class="flex items-center">
             <label for="fileInput" class="block text-sm font-medium mb-2 relative cursor-pointer w-fit hover:opacity-[0.8]">
                 <img :src="    previewImage
                         ? previewImage
                         : require('@/assets/images/empty-file-image.svg')"
-                    class="w-[150px] h-[150px]"        
+                    class="w-[150px] h-[150px] object-contain"        
                 >
                     <img
                     :src="require('@/assets/icons/icon-plus.svg')"
                     class="mr-[-5px] mb-[-5px] absolute right-0 bottom-0 text-[12px] rounded-full w-[20px] bg-[#0278B7]"
                   />
             </label>
-            
-            <span class="text-sm font-light">
-                  Maximum file size: 5Mb
-            </span>
-          </div>
-          <span
-                v-if="fileSize > 1600000"
-                color="red.300"
-                fontSize="sm"
-                ml="2"
-                my="auto"
+            <span
+                v-if="fileSize"
+                class="text-[#F92424] text-sm font-light ml-2"
               >
                 File size too large
         </span>
+        </div>
+        <span class="text-sm font-light">
+                  Maximum file size: 5Mb
+            </span>
+          </div>
         <div class="mb-4">
             <label for="judul_tarian" class="block text-sm font-medium mb-2">Judul Tarian</label>
             <input v-model="params.judul_tarian" type="text" id="judul_tarian" class="border border-[#e2e8f0] rounded px-3 py-2 w-full focus:outline focus:outline-[#80bdff] font-normal">
           </div>
-          <!-- Tambahkan input lainnya sesuai kebutuhan -->
-          <button :disabled="isLoading || isCompleted" type="submit" class="bg-[#413e66] text-white font-bold py-2 px-4 rounded">Daftar</button>
+
+          <div class="flex justify-end">
+          <button :disabled="isLoading || isCompleted() == false" type="submit" :class="`${isLoading || isCompleted() == false ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#413e66] cursor-pointer hover:opacity-[0.8]'}  text-white font-bold py-2 px-4 rounded mt-4 text-end`">Daftar</button>
+        </div>
         </form>
       </div>
     </div>
@@ -136,6 +136,9 @@ import { parseAsync } from '@babel/core';
         ]
     };
   },
+   mounted() {
+    this.isCompleted();
+  },
   methods: {
     setStatus(status) {
       this.params.status = status;
@@ -143,24 +146,21 @@ import { parseAsync } from '@babel/core';
         this.params.lomba = "Jaipong Tunggal";
       }
     },
-    isCompleted(){
-        return (
-        this.params.nama_lengkap &&
-        this.params.no_telp &&
-        this.params.nama_sekolah &&
-        this.params.email_sekolah &&
-        this.params.status &&
-        this.params.lomba &&
-        this.params.bukti_bayar &&
-        this.params.judul_antrian
-      );
-    },
+    isCompleted() {
+  return (
+    this.params.nama_lengkap &&
+    this.params.no_telp &&
+    this.params.nama_sekolah &&
+    this.params.email_sekolah &&
+    this.params.judul_tarian &&
+    !this.fileSize
+  );
+},
+
     async handleImageUpload(event) {
       const file = event.target.files[0];
-      if (file && file.size && file.size <= 1600000) {
-        this.fileSize = file.size;
+      if (file && file.size && file.size <= 5600000) {
 
-        // Simpan URL gambar sebagai string
         this.previewImage = URL.createObjectURL(file);
 
         const formData = new FormData();
@@ -168,7 +168,7 @@ import { parseAsync } from '@babel/core';
 
         // Simpan FormData untuk penggunaan nanti
         this.params.bukti_bayar = formData;
-      } else if (file.size > 1600000) {
+      } else if (file.size > 5600000) {
         this.fileSize = true;
       }
     },
