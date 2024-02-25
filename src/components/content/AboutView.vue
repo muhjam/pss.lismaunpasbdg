@@ -1,10 +1,10 @@
 <template>
-    <div class="max-w-[1080px] mx-auto py-10 flex">
-      <div class="w-[50%]">
+    <div class="max-w-[1080px] mx-auto py-10 flex flex-col md:flex-row gap-4">
+      <div class="w-full md:w-[50%]">
         <!-- Menambahkan kelas "hover:scale-105" untuk memberikan efek membesar saat dihover -->
         <img :src="require('../../../public/icon.png')" class="w-90 hover:scale-105"/>
       </div>
-      <div class="p-4 w-[50%]">
+      <div class="p-4 w-full md:w-[50%]">
         <h2 class="text-4xl font-bold text-[#413e66]">About Us</h2>
         <h3 class="text-xl text-[#696592] my-2"><i>Pasanggiri Seni Sunda, Universitas Pasundan</i></h3>
         <p>Pasanggiri Seni Sunda (PSS) merupakan suatu kegiatan yang menyelenggarakan perlombaan dalam bidang kesenian terutama seni Sunda. PSS sendiri berupaya melestarikan kebudayaan Daerah Sunda agar tetap terjaga keseniannya. <br/><br/>
