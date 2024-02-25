@@ -22,10 +22,6 @@
 		RegistView,
 	},
 	methods: {
-    handleScrollToAbout() {
-      this.$refs.aboutView.handleScrollToAbout();
-    }
-    // Tambahkan metode serupa untuk setiap bagian navbar lainnya
   },
 	computed: {},
   };
