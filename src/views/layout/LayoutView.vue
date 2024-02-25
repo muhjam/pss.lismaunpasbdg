@@ -1,7 +1,9 @@
 <template>
   <div>
     <NavbarView  @scroll-to-about="handleScrollToAbout"/>
+    <div class="pt-[80px]">
     <router-view />
+  </div>
    <FooterView/>
   </div>
 </template>

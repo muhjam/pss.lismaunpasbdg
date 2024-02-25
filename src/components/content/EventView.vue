@@ -1,5 +1,5 @@
 <template>
-    <div class="py-4 bg-[#F5F8FD]">
+    <div class="py-20 bg-[#F5F8FD]">
       <div class="max-w-[1080px] mx-auto ">
       <div class="p-4">
         <h2 class="text-4xl font-bold text-center text-[#413e66]">Event</h2>

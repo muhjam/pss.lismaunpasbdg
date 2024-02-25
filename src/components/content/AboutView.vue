@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-[1080px] mx-auto py-10 flex flex-col md:flex-row gap-4">
+    <div class="max-w-[1080px] mx-auto py-20 flex flex-col md:flex-row gap-4">
       <div class="w-full md:w-[50%]">
         <!-- Menambahkan kelas "hover:scale-105" untuk memberikan efek membesar saat dihover -->
         <img :src="require('@/assets/pss.png')" class="w-90 hover:scale-105"/>
