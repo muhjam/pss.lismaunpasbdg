@@ -6,7 +6,7 @@
                 <a @click="navigateTo('home')" class="block px-4 py-2 text-[#413e66] font-medium hover:text-gray-400 uppercase">Home</a>
               </li>
               <li class="mr-4">
-                <a  @click="navigateTo('about')" class="cursor-pointer block px-4 py-2 font-medium hover:text-gray-400" >About Us</a>
+                <a  @click="navigateTo('about')" class="cursor-pointer text-[#413e66] block px-4 py-2 font-medium hover:text-gray-400" >About Us</a>
               </li>
               <li class="py-2">
                 <a @click="navigateTo('event')" class="block px-4 py-2 text-[#413e66] font-medium hover:text-gray-400 uppercase">Event</a>

@@ -6,7 +6,7 @@
         <h4 class="font-medium uppercase text-white text-center md:text-start">Udah dibuka nih!</h4>
       </div>
       <div>
-        <router-link to="/daftar" class="border-2 border-white text-white text-xl font-semibold px-4 py-2">Daftar ah</router-link>
+        <router-link to="/daftar" class="border-2 border-white text-white text-xl font-semibold px-4 py-2 hover:opacity-[0.8]">Daftar ah</router-link>
     </div>
     </div>
     </div>

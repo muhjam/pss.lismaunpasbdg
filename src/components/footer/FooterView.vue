@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="max-w-[1080px] mx-auto flex justify-center items-center text-center text-sm mt-4 border-t-2 border-gray-200 pt-2">
-        <p class="mr-4">&copy; 2024 Pasanggiri Seni Sunda. All rights reserved.</p>
+        <p class="mr-4">&copy; 2024 Jamjam. All rights reserved.</p>
       </div>
     </footer>
   </template>
