@@ -1,5 +1,5 @@
 <template>
-  <nav :class="`${ isScrolled ? 'bg-opacity-100 bg-white duration-200' : 'bg-opacity-30 bg-black duration-200' }  fixed stick py-4 px-2 z-20 w-full bg-opacity-30 shadow-md`">
+  <nav :class="`${ isScrolled ? 'bg-opacity-100 bg-white duration-200' : 'bg-opacity-30 bg-black duration-200' }  fixed stick py-4 px-2 z-20 w-full shadow-md`">
     <transition name="slide">
             <ul v-if="isMenuOpen" class="md:hidden fixed top-0 left-0 mr-10 z-10 w-[250px] sm:w-[400px] h-[100vh]  bg-opacity-80 bg-white shadow-lg pt-5">
               <li class="py-2">
