@@ -99,7 +99,7 @@ import { parseAsync } from '@babel/core';
           </div>
 
           <div class="flex justify-end">
-          <button type="button" :disabled="isLoading || isCompleted() == false" :class="`${isLoading || isCompleted() == false ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#413e66] cursor-pointer hover:opacity-[0.8]'}  text-white font-bold py-2 px-4 rounded mt-4 text-end`"  @click="onSubmit">Daftar</button>
+          <button type="button" :disabled="isLoading || isCompleted() == false" :class="`${isLoading || isCompleted() == false ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#413e66] cursor-pointer hover:opacity-[0.8]'}  text-white font-bold py-2 px-4 rounded mt-4 text-end`"  @click="onSubmit">{{ isLoading ? 'Loading...' : 'Daftar' }}</button>
         </div>
         </form>
       </div>
@@ -107,6 +107,7 @@ import { parseAsync } from '@babel/core';
   </template>
   
   <script>
+  import Swal from 'sweetalert2';
   export default {
     name: "HomeView",
     data() {
@@ -180,6 +181,7 @@ async handleImageUpload(event) {
 },
 async onSubmit ()
     {
+      this.isLoading = true;
       const phonePattern =  /^[0-9\s]*$/;
       const isValidPhone = phonePattern.test( this.params.no_telp);
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -187,14 +189,47 @@ async onSubmit ()
 
       if ( !isValidPhone )
       {
-        alert( 'Nomor telepon hanya dapat berupa angka.');
+        Swal.fire({
+          title: "Perhatikan!",
+          text: "Nomor telepon hanya dapat berupa angka!",
+          icon: "error"
+        });
       }
 
        if ( !isValidEmail )
       {
-        alert( 'Format email tidak sesuai.' );
+        Swal.fire({
+          title: "Perhatikan!",
+          text: "Format email tidak sesuai!",
+          icon: "error"
+        });
       }
+      if(isValidPhone && isValidEmail){
+        try{
           await this.$store.dispatch( "postData", this.params );
+          Swal.fire({
+          title: "Terkirim!",
+          text: "Selamat anda berhasil mengirim data, tunggu konfirmasi melalui whatsapp!",
+          icon: "success"
+        }).then(() => {
+            this.$router.push("/").then(() => {
+              setTimeout(() => {
+                window.location.reload(true);
+              }, 0);
+            });
+          });
+
+        }catch(err){
+          Swal.fire({
+          title: "Gagal!",
+          text: "Coba kirim ulang untuk beberapa waktu!",
+          icon: "error"
+        });
+        }finally{
+          this.isLoading = false;
+        }
+        }
+        this.isLoading = false;
     },
 
   },
