@@ -4,10 +4,12 @@ import axios from 'axios';
 
 Vue.use(Vuex);
 
-const IMAGE_URL = 'https://pssbackend.vercel.app/api/';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxX8b-B7jGhpPKCYFHENzgXyvKnu_zXUPgrcvZ5SEJy5mktH5cpQxfHrFTCah6oCIvqPQ/exec';
 
 export default new Vuex.Store({
-	state: {},
+	state: {
+		localImages: [],
+	},
 	mutations: {
 		saveImageLocally(state, payload) {
 			const { file, filePath } = payload;
@@ -15,19 +17,15 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		async postImage(context, payload) {
+		async postData(context, payload) {
 			try {
-				const response = await axios.post(`${IMAGE_URL}/hello`, payload, {
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						Authorization: `Bearer 6d207e02198a847aa98d0a2a901485a5`,
-					},
-				});
-				return response;
+			const response = await axios.post(SHEET_URL, payload);
+			return response.data;
 			} catch (error) {
-				return error;
+			console.error('Error posting data:', error);
+			throw error;
 			}
-		},	
+		},
 	},
 	modules: {},
 });

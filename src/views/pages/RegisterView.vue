@@ -36,19 +36,19 @@ import { parseAsync } from '@babel/core';
             ></textarea>
           </div>
           <div class="mb-4">
-            <label for="status" class="block text-sm font-medium mb-2">Status Pelajar</label>
+            <label for="lembaga" class="block text-sm font-medium mb-2">Lembaga Pelajar</label>
             <div class="flex gap-4">
-            <div v-for="(v,i) in status" :key="i" :class="`${v == params.status ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="setStatus(v)">
+            <div v-for="(v,i) in lembaga" :key="i" :class="`${v == params.lembaga ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="setLembaga(v)">
                 <img :src="require('@/assets/icons/icon-'+v.toLowerCase()+'.png')" class="w-[20px]"/>
                 <h5 class="uppercase">{{ v }}</h5>
             </div>
         </div>
         </div>
         <div class="mb-4 mt-6">
-            <label for="lomba" class="block text-sm font-medium mb-2">Daftar Lomba</label>
+            <label for="daftar_lomba" class="block text-sm font-medium mb-2">Daftar Lomba</label>
             <div class="flex gap-4 flex-wrap">
             <div v-for="(v,i) in events" :key="i">
-            <div v-if="v.required.includes(params.status)"  :class="`${v.name == params.lomba ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="params.lomba=v.name">
+            <div v-if="v.required.includes(params.lembaga)"  :class="`${v.name == params.daftar_lomba ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="params.daftar_lomba=v.name">
                 <img :src="v.image" class="w-[20px]"/>
                 <h5 class="uppercase">{{ v.name }}</h5>
             </div>
@@ -99,7 +99,7 @@ import { parseAsync } from '@babel/core';
           </div>
 
           <div class="flex justify-end">
-          <button :disabled="isLoading || isCompleted() == false" type="submit" :class="`${isLoading || isCompleted() == false ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#413e66] cursor-pointer hover:opacity-[0.8]'}  text-white font-bold py-2 px-4 rounded mt-4 text-end`">Daftar</button>
+          <button type="button" :disabled="isLoading || isCompleted() == false" :class="`${isLoading || isCompleted() == false ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#413e66] cursor-pointer hover:opacity-[0.8]'}  text-white font-bold py-2 px-4 rounded mt-4 text-end`"  @click="onSubmit">Daftar</button>
         </div>
         </form>
       </div>
@@ -120,13 +120,13 @@ import { parseAsync } from '@babel/core';
         nama_sekolah: '',
         email_sekolah: '',
         alamat_sekolah: '',
-        status: 'SD',
-        lomba: 'Jaipong Tunggal', 
-        bukti_bayar: '',
+        lembaga: 'SD',
+        daftar_lomba: 'Jaipong Tunggal', 
+        bukti_bayar: 'jewfojewof',
         judul_tarian: '',
 
       },
-      status: ['SD', 'SMP', 'SMA'],
+      lembaga: ['SD', 'SMP', 'SMA'],
       events: [
           { name: "Jaipong Tunggal", required: ['SD','SMP','SMA'], image: require('@/assets/images/image1.jpg') },
           { name: "Jaipong Rampak", required: ['SD','SMP','SMA'], image: require('@/assets/images/image1.jpg') },
@@ -140,10 +140,10 @@ import { parseAsync } from '@babel/core';
     this.isCompleted();
   },
   methods: {
-    setStatus(status) {
-      this.params.status = status;
-      if (!this.events.find(event => event.name === this.params.lomba)?.required.includes(status)) {
-        this.params.lomba = "Jaipong Tunggal";
+    setLembaga(lembaga) {
+      this.params.lembaga = lembaga;
+      if (!this.events.find(event => event.name === this.params.daftar_lomba)?.required.includes(lembaga)) {
+        this.params.daftar_lomba = "Jaipong Tunggal";
       }
     },
     isCompleted() {
@@ -153,6 +153,8 @@ import { parseAsync } from '@babel/core';
     this.params.nama_sekolah &&
     this.params.email_sekolah &&
     this.params.judul_tarian &&
+    this.params.lembaga &&
+    this.params.daftar_lomba &&
     !this.fileSize
   );
 },
@@ -176,6 +178,24 @@ async handleImageUpload(event) {
     this.fileSize = true;
   }
 },
+async onSubmit ()
+    {
+      const phonePattern =  /^[0-9\s]*$/;
+      const isValidPhone = phonePattern.test( this.params.no_telp);
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValidEmail = emailPattern.test( this.params.email_sekolah ); 
+
+      if ( !isValidPhone )
+      {
+        alert( 'Nomor telepon hanya dapat berupa angka.');
+      }
+
+       if ( !isValidEmail )
+      {
+        alert( 'Format email tidak sesuai.' );
+      }
+          await this.$store.dispatch( "postData", this.params );
+    },
 
   },
   };
