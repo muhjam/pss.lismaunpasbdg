@@ -11,8 +11,6 @@
   "dependencies": {
     "@vercel/blob": "^0.22.1",
     "axios": "^1.6.0",
-    "thin-backend": "^0.10.4",
-    "thin-backend-vue": "^0.10.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
