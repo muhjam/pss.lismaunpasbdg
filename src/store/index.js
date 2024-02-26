@@ -4,7 +4,7 @@ import axios from 'axios';
 
 Vue.use(Vuex);
 
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxX8b-B7jGhpPKCYFHENzgXyvKnu_zXUPgrcvZ5SEJy5mktH5cpQxfHrFTCah6oCIvqPQ/exec';
+const SHEET_URL = 'https://api.sheetmonkey.io/form/pPqJcRhNBLJiZewx5zc6K4';
 
 export default new Vuex.Store({
 	state: {
