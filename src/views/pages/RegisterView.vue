@@ -90,7 +90,7 @@ import { parseAsync } from '@babel/core';
         </span>
         </div>
         <span class="text-sm font-light">
-                  Maximum file size: 5Mb
+                  Maximum file size: 5Mb.
             </span>
           </div>
         <div class="mb-4">
