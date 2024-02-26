@@ -13,17 +13,17 @@ const routes = [
         name: "HomeView",
         component: () => import("@/views/HomeView.vue"),
       },
+      {
+        path: "/daftar",
+        name: "RegisterView",
+        component: () => import("@/views/pages/RegisterView.vue"),
+    },
     ],
   },
   {
     path: "/",
     component: () => import("@/views/layout/LayoutBlank.vue"),
     children: [
-		{
-			path: "/daftar",
-			name: "RegisterView",
-			component: () => import("@/views/pages/RegisterView.vue"),
-	},
 	{
 		path: "*",
 		name: "404",

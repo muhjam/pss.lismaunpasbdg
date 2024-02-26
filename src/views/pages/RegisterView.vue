@@ -1,9 +1,5 @@
-
-import { parseAsync } from '@babel/core';
-
-import { parseAsync } from '@babel/core';
 <template>
-    <div class="max-w-[1080px] mx-auto py-4 px-2 font-bold text-[#413e66]">
+    <div class="max-w-[1080px] mx-auto pb-4 pt-[80px] px-2 font-bold text-[#413e66]">
       <div class="bg-white shadow-md rounded-lg p-6">
         <h2 class="text-4xl mb-4">Daftar Lomba PSS</h2>
         <form>
