@@ -157,21 +157,26 @@ import { parseAsync } from '@babel/core';
   );
 },
 
-    async handleImageUpload(event) {
-      const file = event.target.files[0];
-      if (file && file.size && file.size <= 5600000) {
+async handleImageUpload(event) {
+  const file = event.target.files[0];
+  if (file && file.size && file.size <= 5600000) {
+    this.previewImage = URL.createObjectURL(file);
 
-        this.previewImage = URL.createObjectURL(file);
+    const formData = new FormData();
+    formData.append("image", file);
 
-        const formData = new FormData();
-        formData.append("file", file);
+    try {
+      // Panggil aksi Vuex untuk mengunggah gambar
+      const response = await this.$store.dispatch('postImage', formData);
+      console.log('Response from Imgur:', response);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  } else if (file.size > 5600000) {
+    this.fileSize = true;
+  }
+},
 
-        // Simpan FormData untuk penggunaan nanti
-        this.params.bukti_bayar = formData;
-      } else if (file.size > 5600000) {
-        this.fileSize = true;
-      }
-    },
   },
   };
   </script>
