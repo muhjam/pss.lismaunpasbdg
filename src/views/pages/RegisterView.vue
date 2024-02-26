@@ -46,16 +46,16 @@ import { parseAsync } from '@babel/core';
         </div>
         <div class="mb-4 mt-6">
             <label for="daftar_lomba" class="block text-sm font-medium mb-2">Daftar Lomba</label>
-            <div class="flex gap-4 flex-wrap">
+            <div class="flex flex-wrap">
             <div v-for="(v,i) in events" :key="i">
-            <div v-if="v.required.includes(params.lembaga)"  :class="`${v.name == params.daftar_lomba ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="params.daftar_lomba=v.name">
+            <div v-if="v.required.includes(params.lembaga)"  :class="`${v.name == params.daftar_lomba ? 'bg-[#E1F3FF] text-[#29AAFE] border-[#29AAFE]' : ''} flex gap-2 mr-4 mb-4 items-center border border-[#e2e8f0] rounded px-4 py-2 cursor-pointer hover:bg-[#E1F3FF] hover:text-[#29AAFE] hover:border-[#29AAFE]`" @click="params.daftar_lomba=v.name">
                 <img :src="v.image" class="w-[20px]"/>
                 <h5 class="uppercase">{{ v.name }}</h5>
             </div>
         </div>
         </div>
         </div>
-        <h5 class="text-2xl mb-2 mt-6">Pembayaran</h5>
+        <h5 class="text-2xl mb-2 mt-2">Pembayaran</h5>
         <h6>Lakukan pembayaran terlebih dahulu</h6>
         <h6 class="text-sm mb-1 font-light"><span class="font-bold">BCA:</span> 2208204824 a/n Ranca Gigih Pramudhita</h6>
         <h6 class="text-sm mb-4 font-light"><span class="font-bold">BNI:</span> 2208204824 a/n Ranca Gigih Pramudhita</h6>
@@ -90,7 +90,7 @@ import { parseAsync } from '@babel/core';
         </span>
         </div>
         <span class="text-sm font-light">
-                  Maximum file size: 5Mb.
+                  Maximum file size: 5Mb
             </span>
           </div>
         <div class="mb-4">
