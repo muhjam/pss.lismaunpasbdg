@@ -14,7 +14,7 @@
           <p class="text-lg mb-2"><strong>Contact Us:</strong></p>
           <ul>
             <li><a href="tel:+6281234567890" class="text-sm hover:text-gray-400">Phone: +62 812-3456-7890</a></li>
-            <li><a href="mailto:info@pasanggiri.com" class="text-sm hover:text-gray-400">Email: info@pasanggiri.com</a></li>
+            <li><a href="mailto:info@pasanggiri.com" class="text-sm hover:text-gray-400">Email: psslismaunpas@gmail.com</a></li>
             <li><a href="#" class="text-sm hover:text-gray-400">Address: Jl. Tamansari No. 6-8 Kota Bandung, Jawa Barat Indonesia</a></li>
           </ul>
           <div class="flex gap-2 mt-2">

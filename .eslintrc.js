@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    'Tally': true,
+  },
   root: true,
   env: {
     node: true

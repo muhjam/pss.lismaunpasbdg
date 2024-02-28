@@ -1,5 +1,5 @@
 <template>
-    <div class="py-[40px] bg-[#2d2b46]">
+    <div class="py-[40px] backgroundImage " style="background-image: src('../../assets/images/batik.jpg');">
       <div class="max-w-[1080px] mx-auto flex flex-col md:flex-row justify-center gap-6 md:justify-between items-center">
         <div>
         <h2 class="text-2xl font-bold text-white text-center md:text-start">Pendaftaran Lomba PSS</h2>
@@ -16,4 +16,8 @@
   </script>
   
   
-  
+  <style>
+.backgroundImage{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('../../assets/images/batik.jpg');
+}
+</style>
