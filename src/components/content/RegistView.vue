@@ -6,13 +6,24 @@
         <h4 class="font-medium uppercase text-white text-center md:text-start">Udah dibuka nih!</h4>
       </div>
       <div>
-        <a href="/daftar" class="border-2 border-white text-white text-xl font-semibold px-4 py-2 hover:opacity-[0.8]">Daftar ah</a>
+        <a @click="navigateTo('event')" class="border-2 border-white text-white text-xl cursor-pointer font-semibold px-4 py-2 hover:opacity-[0.8]">Daftar yuk</a>
     </div>
     </div>
     </div>
   </template>
-  
+
   <script>
+  export default {
+    methods: {
+      navigateTo(tab) {
+      this.activeTab = tab;
+      const section = document.getElementById(tab);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    }
+  };
   </script>
   
   
