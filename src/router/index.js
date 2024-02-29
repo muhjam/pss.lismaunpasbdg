@@ -14,10 +14,30 @@ const routes = [
         component: () => import("@/views/HomeView.vue"),
       },
       {
-        path: "/daftar",
+        path: "/daftar-jaipong-tunggal",
         name: "RegisterView",
-        component: () => import("@/views/pages/RegisterView.vue"),
+        component: () => import("@/views/pages/RegisterTunggal.vue"),
     },
+    {
+      path: "/daftar-jaipong-rampak",
+      name: "RegisterView",
+      component: () => import("@/views/pages/RegisterRampak.vue"),
+  },
+  {
+    path: "/daftar-pupuh",
+    name: "RegisterView",
+    component: () => import("@/views/pages/RegisterPupuh.vue"),
+},
+{
+  path: "/daftar-sajak",
+  name: "RegisterView",
+  component: () => import("@/views/pages/RegisterSajak.vue"),
+},
+{
+  path: "/daftar-pencak-silat",
+  name: "RegisterView",
+  component: () => import("@/views/pages/RegisterSajak.vue"),
+},
     ],
   },
   {

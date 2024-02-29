@@ -11,8 +11,8 @@
           <div class="overlay">
             <div class="overlay-content">
               <h3 class="text-lg font-semibold text-gray-800">{{ v.name }}</h3>
-              <p class="text-sm text-gray-600 mt-1">{{ v.description }}</p>
-              <button class="bg-[#413e66] px-4 py-2 hover:opacity-[0.8] mt-4" @click="lihatDetail(v)">Daftar</button>
+              <p class="text-sm text-gray-600 mt-1 mb-8">{{ v.description }}</p>
+              <a :href="v.link" class="bg-[#413e66] px-4 py-2 hover:opacity-[0.8]" >Daftar</a>
             </div>
           </div>
         </div>
@@ -27,11 +27,11 @@
     data() {
       return {
         events: [
-          { name: "Jaipong Tunggal", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg') },
-          { name: "Jaipong Rampak", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg') },
-          { name: "Pupuh", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg') },
-          { name: "Sajak", description: "SD dan SMP", image: require('@/assets/images/image1.jpg') },
-          { name: "Seni Ibing Pencak Silat", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg') }
+          { name: "Jaipong Tunggal", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-tunggal" },
+          { name: "Jaipong Rampak", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-rampak" },
+          { name: "Pupuh", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pupuh" },
+          { name: "Sajak", description: "SD dan SMP", image: require('@/assets/images/image1.jpg'), link: "/daftar-sajak"},
+          { name: "Seni Ibing Pencak Silat", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pencak-silat" }
         ]
       };
     },
