@@ -30,7 +30,7 @@
           { name: "Jaipong Tunggal", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-tunggal" },
           { name: "Jaipong Rampak", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-rampak" },
           { name: "Pupuh", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pupuh" },
-          { name: "Sajak", description: "SD dan SMP", image: require('@/assets/images/image1.jpg'), link: "/daftar-sajak"},
+          { name: "Sajak Sunda", description: "SD dan SMP", image: require('@/assets/images/image1.jpg'), link: "/daftar-sajak"},
           { name: "Seni Ibing Pencak Silat", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pencak-silat" }
         ]
       };
