@@ -2,13 +2,14 @@
   <div class="max-w-[1080px] mx-auto pb-4 pt-[80px] px-2 font-bold text-[#413e66]">
     <div class="bg-white shadow-md rounded-lg p-6">
       <h2 class="text-4xl mb-4">Daftar Lomba PSS</h2>
-      <iframe data-tally-src="https://tally.so/embed/mR5gpK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1539" frameborder="0" marginheight="0" marginwidth="0" title="Jaipong Tunggal"></iframe>
+      <iframe data-tally-src="https://tally.so/embed/npBNEE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="2552" frameborder="0" marginheight="0" marginwidth="0" title="Seni Ibing Pencak Silat"></iframe>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: "HomeView",
   mounted() {
     this.loadTallyEmbeds();
   },

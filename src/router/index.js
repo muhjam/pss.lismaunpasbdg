@@ -36,7 +36,7 @@ const routes = [
 {
   path: "/daftar-pencak-silat",
   name: "RegisterView",
-  component: () => import("@/views/pages/RegisterSajak.vue"),
+  component: () => import("@/views/pages/RegisterPencaksilat.vue"),
 },
     ],
   },
