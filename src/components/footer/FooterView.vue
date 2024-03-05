@@ -13,9 +13,9 @@
         <div>
           <p class="text-lg mb-2"><strong>Contact Us:</strong></p>
           <ul>
-            <li><a href="tel:+6281234567890" class="text-sm hover:text-gray-400">Phone: +62 812-3456-7890</a></li>
-            <li><a href="mailto:info@pasanggiri.com" class="text-sm hover:text-gray-400">Email: psslismaunpas@gmail.com</a></li>
-            <li><a href="#" class="text-sm hover:text-gray-400">Address: Jl. Tamansari No. 6-8 Kota Bandung, Jawa Barat Indonesia</a></li>
+            <li><span class="text-sm">Whatsapp: </span> <a href="http://wa.me/6285156632360?text=Aku%20Anya%20panitia%20PSS,%20ada%20yang%20bisa%20saya%20bantu?" target="_blank" class="text-sm hover:text-gray-400">+62 851-5663-2360 </a></li>
+            <li><span class="text-sm">Email: </span> <a href="mailto:psslismaunpas@gmail.com" target="_blank" class="text-sm hover:text-gray-400">psslismaunpas@gmail.com</a></li>
+            <li><span class="text-sm">Address: </span> <a href="https://maps.app.goo.gl/5zWyjKzD2Kq7cVaw8" class="text-sm hover:text-gray-400">Jl. Tamansari No. 6-8 Kota Bandung, Jawa Barat Indonesia</a></li>
           </ul>
           <div class="flex gap-2 mt-2">
           <a href="https://www.instagram.com/pasanggiri.lisma/" target="_blank" class="bg-[#413e66] hover:opacity-[0.8] flex w-fit p-2 rounded-full" >
