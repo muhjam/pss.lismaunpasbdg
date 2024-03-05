@@ -6,7 +6,7 @@
         <h4 class="text-md text-center">Acara PSS memiliki 5 lomba kesenian, sebagai berikut</h4>
       </div>
       <div class="flex justify-center flex-wrap mt-4 px-2">
-        <div v-for="(v, i) in events" :key="i" class="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-md w-90 h-80 md:w-72 md:h-62 lg:w-80 lg:h-80 mx-2 my-2 cursor-pointer duration-200 card">
+        <div v-for="(v, i) in events" :key="i" class="flex flex-col items-center bg-opacity-30 bg-white rounded-lg overflow-hidden shadow-md w-90 h-80 md:w-72 md:h-62 lg:w-80 lg:h-80 mx-2 my-2 cursor-pointer duration-200 card">
           <img :src="v.image" :alt="v.name" class="w-full object-cover object-center">
           <div class="overlay">
             <div class="overlay-content">
@@ -27,11 +27,11 @@
     data() {
       return {
         events: [
-          { name: "Jaipong Tunggal", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-tunggal" },
-          { name: "Jaipong Rampak", description: "SD, SMP, dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-jaipong-rampak" },
-          { name: "Pupuh", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pupuh" },
-          { name: "Sajak Sunda", description: "SD dan SMP", image: require('@/assets/images/image1.jpg'), link: "/daftar-sajak"},
-          { name: "Seni Ibing Pencak Silat", description: "SMP dan SMA", image: require('@/assets/images/image1.jpg'), link: "/daftar-pencak-silat" }
+          { name: "Jaipong Tunggal", description: "SD, SMP, dan SMA", image: require('@/assets/images/lomba1.jpg'), link: "/daftar-jaipong-tunggal" },
+          { name: "Jaipong Rampak", description: "SD, SMP, dan SMA", image: require('@/assets/images/lomba2.jpg'), link: "/daftar-jaipong-rampak" },
+          { name: "Pupuh", description: "SMP dan SMA", image: require('@/assets/images/lomba3.jpg'), link: "/daftar-pupuh" },
+          { name: "Sajak Sunda", description: "SD dan SMP", image: require('@/assets/images/lomba4.jpg'), link: "/daftar-sajak"},
+          { name: "Seni Ibing Pencak Silat", description: "SMP dan SMA", image: require('@/assets/images/lomba5.jpg'), link: "/daftar-pencak-silat" }
         ]
       };
     },
